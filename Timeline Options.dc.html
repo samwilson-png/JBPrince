@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+
+<helmet>
+  <link rel="stylesheet" href="_ds/jb-prince-design-system-e1e326c2-5d92-4b84-ba56-f04e8e0552a8/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/jb-prince-design-system-e1e326c2-5d92-4b84-ba56-f04e8e0552a8/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/jb-prince-design-system-e1e326c2-5d92-4b84-ba56-f04e8e0552a8/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/jb-prince-design-system-e1e326c2-5d92-4b84-ba56-f04e8e0552a8/tokens/effects.css">
+  <link rel="stylesheet" href="_ds/jb-prince-design-system-e1e326c2-5d92-4b84-ba56-f04e8e0552a8/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap">
+  <script src="_ds/jb-prince-design-system-e1e326c2-5d92-4b84-ba56-f04e8e0552a8/_ds_bundle.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/lucide-static/font/lucide.css">
+  <style>
+    body{margin:0;background:var(--color-bg-page);color:var(--color-text-primary);font-family:var(--font-sans)}
+    summary{cursor:pointer;list-style:none}
+    summary::-webkit-details-marker{display:none}
+    .jbp-slideshow{scroll-snap-type:x mandatory}
+    .jbp-slide{scroll-snap-align:start}
+  </style>
+</helmet>
+
+<div style="max-width:1200px;margin:0 auto;padding:56px 40px 120px">
+  <div style="font-family:var(--font-condensed);font-size:12px;font-weight:700;letter-spacing:var(--tracking-wider);text-transform:uppercase;color:var(--color-brand-primary);margin-bottom:8px">No-Code Timeline Options</div>
+  <h1 style="margin:0 0 12px;font-size:clamp(26px,3vw,36px);font-weight:700;letter-spacing:var(--tracking-tight)">All Options, Stacked For Comparison</h1>
+  <p style="margin:0 0 56px;color:var(--color-text-secondary);font-size:var(--text-md);max-width:60ch">Scan each and tell me which to cut — all options use the full 10-era history so the comparison is apples-to-apples.</p>
+
+  <div style="border-top:1px solid var(--color-border-default);padding-top:48px;margin-bottom:64px">
+    <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:24px">
+      <div style="font-family:var(--font-condensed);font-size:12px;font-weight:700;letter-spacing:var(--tracking-wider);text-transform:uppercase;color:var(--color-text-secondary)">Option 1</div>
+      <div style="font-weight:700;font-size:var(--text-md)">Collapsible Accordion</div>
+    </div>
+    <div style="max-width:700px;border-top:1px solid var(--color-border-default)">
+      <sc-for list="{{ eras }}" as="era" hint-placeholder-count="5">
+        <details style="border-bottom:1px solid var(--color-border-default);padding:18px 0">
+          <summary style="cursor:pointer;font-family:var(--font-condensed);font-size:15px;font-weight:700;letter-spacing:var(--tracking-wide);color:var(--color-text-primary);display:flex;align-items:center;gap:16px">
+            <span style="color:var(--color-brand-primary);min-width:90px;font-size:20px">{{ era.year }}</span>{{ era.label }}
+          </summary>
+          <p style="margin:14px 0 0 86px;color:var(--color-text-secondary);font-size:var(--text-sm);line-height:var(--leading-relaxed);max-width:60ch">{{ era.detail }}</p>
+        </details>
+      </sc-for>
+    </div>
+  </div>
+
+  <div style="border-top:1px solid var(--color-border-default);padding-top:48px;margin-bottom:64px">
+    <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:24px">
+      <div style="font-family:var(--font-condensed);font-size:12px;font-weight:700;letter-spacing:var(--tracking-wider);text-transform:uppercase;color:var(--color-text-secondary)">Option 2</div>
+      <div style="font-weight:700;font-size:var(--text-md)">Stacked List, Connecting Line</div>
+    </div>
+    <div style="max-width:700px;position:relative;padding-left:24px;border-left:2px solid var(--color-border-default)">
+      <sc-for list="{{ eras }}" as="era" hint-placeholder-count="5">
+        <div style="position:relative;padding-bottom:32px">
+          <div style="position:absolute;left:-29px;top:2px;width:8px;height:8px;border-radius:50%;background:var(--color-brand-primary)"></div>
+          <div style="font-family:var(--font-condensed);font-size:24px;font-weight:700;color:var(--color-brand-primary);letter-spacing:var(--tracking-wide);margin-bottom:6px">{{ era.year }}</div>
+          <div style="font-weight:700;font-size:var(--text-sm);margin-bottom:6px">{{ era.label }}</div>
+          <p style="margin:0;color:var(--color-text-secondary);font-size:var(--text-sm);line-height:var(--leading-relaxed)">{{ era.detail }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <div style="border-top:1px solid var(--color-border-default);padding-top:48px;margin-bottom:64px">
+    <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:24px">
+      <div style="font-family:var(--font-condensed);font-size:12px;font-weight:700;letter-spacing:var(--tracking-wider);text-transform:uppercase;color:var(--color-brand-primary)">Option 3</div>
+      <div style="font-weight:700;font-size:var(--text-md)">Threaded Line, Collapsible Rows</div>
+    </div>
+    <div style="max-width:700px;position:relative;padding-left:24px;border-left:2px solid var(--color-border-default)">
+      <sc-for list="{{ eras }}" as="era" hint-placeholder-count="5">
+        <details style="position:relative;padding-bottom:28px">
+          <div style="position:absolute;left:-29px;top:6px;width:8px;height:8px;border-radius:50%;background:var(--color-brand-primary)"></div>
+          <summary style="display:flex;align-items:baseline;gap:10px">
+            <span style="font-family:var(--font-condensed);font-size:22px;font-weight:700;color:var(--color-brand-primary);letter-spacing:var(--tracking-wide);white-space:nowrap">{{ era.year }}</span>
+            <span style="flex:1;font-weight:700;font-size:var(--text-sm)">{{ era.label }}</span>
+            <i class="icon-chevron-down" style="font-size:11px;color:var(--color-text-secondary)"></i>
+          </summary>
+          <p style="margin:10px 0 0;color:var(--color-text-secondary);font-size:var(--text-sm);line-height:var(--leading-relaxed)">{{ era.detail }}</p>
+        </details>
+      </sc-for>
+    </div>
+  </div>
+
+  <div style="border-top:1px solid var(--color-border-default);padding-top:48px">
+    <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:24px">
+      <div style="font-family:var(--font-condensed);font-size:12px;font-weight:700;letter-spacing:var(--tracking-wider);text-transform:uppercase;color:var(--color-text-secondary)">Option 5</div>
+      <div style="font-weight:700;font-size:var(--text-md)">Full-Bleed Horizontal Slideshow</div>
+    </div>
+    <p style="margin:0 0 24px;color:var(--color-text-secondary);font-size:var(--text-sm);max-width:60ch">Native Shopify "Slideshow" section, full-width, zero code — swipe or click through eras like a gallery.</p>
+    <div class="jbp-slideshow" style="display:flex;gap:16px;overflow-x:auto;padding-bottom:16px;margin:0 -40px;padding-left:40px;padding-right:40px">
+      <sc-for list="{{ eras }}" as="era" hint-placeholder-count="5">
+        <div class="jbp-slide" style="flex:0 0 340px;position:relative;color:#fff;border-radius:4px;overflow:hidden;min-height:220px">
+          <img src="{{ era.still }}" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+          <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,20,20,.15) 0%,rgba(20,20,20,.85) 100%)"></div>
+          <div style="position:relative;padding:36px 28px;min-height:220px;display:flex;flex-direction:column;justify-content:flex-end">
+            <div style="font-family:var(--font-condensed);font-size:34px;font-weight:700;letter-spacing:var(--tracking-tight);line-height:1.1;margin-bottom:14px;color:#fff">{{ era.year }}</div>
+            <div style="font-weight:700;font-size:var(--text-sm);line-height:1.2;margin-bottom:8px;color:#fff">{{ era.label }}</div>
+            <p style="margin:0;color:#fff;font-size:var(--text-xs);line-height:1.3">{{ era.detail }}</p>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+    <div style="display:flex;gap:6px;margin-top:16px">
+      <sc-for list="{{ eras }}" as="era" hint-placeholder-count="5">
+        <div style="width:6px;height:6px;border-radius:50%;background:var(--color-border-strong)"></div>
+      </sc-for>
+    </div>
+  </div>
+
+  <div style="border-top:1px solid var(--color-border-default);padding-top:48px">
+    <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:24px">
+      <div style="font-family:var(--font-condensed);font-size:12px;font-weight:700;letter-spacing:var(--tracking-wider);text-transform:uppercase;color:var(--color-text-secondary)">Option 5b</div>
+      <div style="font-weight:700;font-size:var(--text-md)">Image Slideshow, Caption Below</div>
+    </div>
+    <p style="margin:0 0 24px;color:var(--color-text-secondary);font-size:var(--text-sm);max-width:60ch">Same slideshow as Option 5, but type sits below the image instead of overlaid on it.</p>
+    <div style="display:flex;gap:20px;overflow-x:auto;padding-bottom:16px">
+      <sc-for list="{{ eras }}" as="era" hint-placeholder-count="5">
+        <div style="flex:0 0 280px">
+          <img src="{{ era.still }}" alt="" style="width:100%;aspect-ratio:1;object-fit:cover;border-radius:4px;display:block">
+          <div style="margin-top:14px;font-family:var(--font-condensed);font-size:22px;font-weight:700;color:var(--color-brand-primary);letter-spacing:var(--tracking-wide)">{{ era.year }}</div>
+          <div style="margin-top:4px;font-size:var(--text-sm);color:var(--color-text-secondary);line-height:var(--leading-relaxed)">{{ era.label }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  eras = [
+    { year: '1977', label: 'Judy Prince founds the company in a Park Slope brownstone.', detail: 'On March 1, 1977, Judy Prince founded JB Prince Company from a brownstone in Park Slope, Brooklyn. The mission: to source and distribute the finest culinary tools for professional chefs. First-year sales come in around $18,000.', still: 'assets/timeline-still-1.png' },
+    { year: '1978', label: 'Second-year sales top $80,000 — the model is validated.', detail: 'Sales climb to roughly $80,000 in the company\u2019s second year. The growth makes clear this is more than a side project.', still: 'assets/timeline-still-2.png' },
+    { year: '1979', label: 'Larry Prince joins full-time, forming a lifelong partnership.', detail: 'In mid-March 1979, Larry Prince leaves his position in corporate America to join JB Prince full-time. What was meant to be a six-month commitment becomes a lifelong partnership. Judy brings product expertise, chef relationships, and an obsessive commitment to quality; Larry brings business acumen, marketing strategy, and operational discipline.', still: 'assets/timeline-still-3.png' },
+    { year: '1981', label: 'The company moves into a Manhattan showroom on West 36th Street.', detail: 'JB Prince moves from Brooklyn to West 36th Street in Manhattan\u2019s garment district — a shift from home-based operation to professional showroom, making it easier for customers to visit and browse in person.', still: 'assets/timeline-still-4.png' },
+    { year: '1986', label: 'A larger showroom opens on West 38th Street.', detail: 'JB Prince moves to a larger space at West 38th Street to accommodate continued growth and inventory expansion.', still: 'assets/timeline-still-5.png' },
+    { year: '1996', label: 'JB Prince settles on East 31st Street, where it remains today.', detail: 'JB Prince relocates to East 31st Street, where it remains today. The showroom becomes a destination for chefs, culinary students, and industry professionals — a place where product curation, expert knowledge, and direct relationships form the foundation of every transaction.', still: 'assets/timeline-still-1.png' },
+    { year: '1997–2019', label: 'The printed catalog anchors JB Prince\u2019s direct-to-customer strategy.', detail: 'The printed catalog remains a cornerstone of JB Prince\u2019s direct-to-customer strategy until the final catalog is produced in 2019. Over those decades, the catalog evolves with the industry, but the principle stays constant: thoughtfully curated products selected for quality and relevance, with knowledgeable support available by phone.', still: 'assets/timeline-still-2.png' },
+    { year: '2000', label: 'Tim Mussig joins — and begins two decades of leadership.', detail: 'Tim Mussig joins JB Prince as a customer service representative. A former restaurant cook looking for a change of pace, he brings kitchen experience and an understanding of professional chefs\u2019 needs, and is promoted to customer service manager within six months. Over the next two decades he moves into leadership roles across the company, ultimately becoming President, CEO, and Owner.', still: 'assets/timeline-still-3.png' },
+    { year: 'Fall 2026', label: 'A flagship showroom opens at Chelsea Market.', detail: 'JB Prince opens a flagship showroom at Chelsea Market in Manhattan. For the first time, the company opens directly to the public at street level — a demonstration kitchen, chef and vendor collaborations, and programming that makes the tools of the trade accessible to home cooks, not just professionals.', still: 'assets/timeline-still-4.png' },
+    { year: '2027', label: 'JB Prince marks its 50th anniversary.', detail: 'JB Prince marks its 50th anniversary, entering its next chapter with the same commitment to excellence, quality, and customer service that has defined the company since 1977.', still: 'assets/timeline-still-5.png' },
+  ];
+  renderVals() { return { eras: this.eras }; }
+}
+
+</script>
+</body>
+</html>

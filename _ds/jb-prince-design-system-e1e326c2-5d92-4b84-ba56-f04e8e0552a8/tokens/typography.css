@@ -1,0 +1,34 @@
+:root{
+/* Base font families — Helvetica Neue is the site's system stack throughout, including the condensed nav/label treatment (previously Roboto Condensed). */
+--font-sans:"Helvetica Neue",Helvetica,Arial,sans-serif;
+--font-condensed:"Helvetica Neue",Helvetica,Arial,sans-serif;
+
+/* Semantic type roles */
+--font-display:var(--font-sans);
+--font-body:var(--font-sans);
+--font-label:var(--font-condensed);
+
+/* Sizes — a compact retail scale; body copy runs small (13–15px) with large, confident category/product headlines */
+--text-3xl:44px;
+--text-2xl:34px;
+--text-xl:26px;
+--text-lg:20px;
+--text-md:16px;
+--text-base:14px;
+--text-sm:13px;
+--text-xs:11px;
+
+--leading-tight:1.1;
+--leading-snug:1.25;
+--leading-normal:1.5;
+--leading-relaxed:1.65;
+
+--weight-regular:400;
+--weight-medium:500;
+--weight-bold:700;
+
+--tracking-tight:-0.01em;
+--tracking-normal:0;
+--tracking-wide:0.04em;
+--tracking-wider:0.08em;
+}

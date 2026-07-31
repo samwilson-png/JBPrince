@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/jb-prince-design-system-e1e326c2-5d92-4b84-ba56-f04e8e0552a8/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/jb-prince-design-system-e1e326c2-5d92-4b84-ba56-f04e8e0552a8/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/jb-prince-design-system-e1e326c2-5d92-4b84-ba56-f04e8e0552a8/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/jb-prince-design-system-e1e326c2-5d92-4b84-ba56-f04e8e0552a8/tokens/effects.css">
+  <link rel="stylesheet" href="_ds/jb-prince-design-system-e1e326c2-5d92-4b84-ba56-f04e8e0552a8/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap">
+  <script src="_ds/jb-prince-design-system-e1e326c2-5d92-4b84-ba56-f04e8e0552a8/_ds_bundle.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/lucide-static/font/lucide.css">
+  <style>
+    body{margin:0;background:#000;color:#fff;font-family:var(--font-sans)}
+    a{color:var(--color-text-link);text-decoration:none}
+    a:hover{color:var(--color-text-link-hover)}
+    ::selection{background:var(--color-brand-primary);color:#fff}a:focus-visible, button:focus-visible, [role="button"]:focus-visible { outline: 2px solid var(--color-brand-primary); outline-offset: 2px; border-radius: 2px; }
+    @keyframes jbp-bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(8px)}}
+  </style>
+</helmet>
+
+<section style="position:relative;height:100vh;min-height:680px;overflow:hidden">
+  <video ref="{{ videoRef }}" autoplay="autoplay" muted="muted" playsinline="playsinline" poster="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+    <source src="assets/chelsea-market-hero.mp4" type="video/mp4">
+  </video>
+  <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.25) 0%,transparent 40%,rgba(0,0,0,.55) 100%)"></div>
+  <div style="position:absolute;inset:0;display:flex;align-items:flex-end;justify-content:center;padding:40px;padding-bottom:100px;opacity:{{ overlayOpacity }};transition:opacity 900ms var(--ease-standard);pointer-events:{{ overlayPointerEvents }}">
+    <div style="max-width:800px;text-align:center">
+      <h1 style="margin:0 0 32px;font-weight:700;letter-spacing:var(--tracking-tight);color:#fff;font-size:clamp(34px,5vw,64px);line-height:1.04;text-wrap:pretty">JB Prince Is Coming To Chelsea Market</h1>
+      <a href="#" style="display:block;margin-bottom:24px;font-size:var(--text-lg);font-weight:700;color:#fff;text-decoration:underline">Read the press release</a>
+      <div style="display:flex;gap:16px;flex-wrap:wrap;justify-content:center">
+        <x-import component-from-global-scope="JBPrinceDesignSystem_e1e326.Button" hint-size="auto,54px" variant="primary" size="lg" style="border-radius:999px">JB Prince Store</x-import>
+        <x-import component-from-global-scope="JBPrinceDesignSystem_e1e326.Button" hint-size="auto,54px" variant="primary" size="lg" style="border-radius:999px">Our Story</x-import>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { ended: false };
+  renderVals() {
+    return {
+      videoRef: (el) => {
+        if (!el || this.videoBound) return;
+        this.videoBound = true;
+        el.addEventListener('ended', () => this.setState({ ended: true }));
+      },
+      overlayOpacity: this.state.ended ? 1 : 0,
+      overlayPointerEvents: this.state.ended ? 'auto' : 'none',
+    };
+  }
+}
+</script>
+</body>
+</html>

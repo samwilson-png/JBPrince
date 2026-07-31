@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/jb-prince-design-system-e1e326c2-5d92-4b84-ba56-f04e8e0552a8/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/jb-prince-design-system-e1e326c2-5d92-4b84-ba56-f04e8e0552a8/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/jb-prince-design-system-e1e326c2-5d92-4b84-ba56-f04e8e0552a8/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/jb-prince-design-system-e1e326c2-5d92-4b84-ba56-f04e8e0552a8/tokens/effects.css">
+  <link rel="stylesheet" href="_ds/jb-prince-design-system-e1e326c2-5d92-4b84-ba56-f04e8e0552a8/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap">
+  <script src="_ds/jb-prince-design-system-e1e326c2-5d92-4b84-ba56-f04e8e0552a8/_ds_bundle.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/lucide-static/font/lucide.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script src="./image-slot.js"></script>
+  <style>
+    image-slot, img{filter:contrast(1.1) saturate(0.88)}
+    body{margin:0;background:var(--color-bg-page);color:var(--color-text-primary);font-family:var(--font-sans)}
+    a{color:var(--color-text-link);text-decoration:none}
+    a:hover{color:var(--color-text-link-hover)}
+    ::selection{background:var(--color-brand-primary);color:#fff}a:focus-visible, button:focus-visible, [role="button"]:focus-visible { outline: 2px solid var(--color-brand-primary); outline-offset: 2px; border-radius: 2px; }
+    .jbp-mobile-toggle{display:none}
+    .jbp-mobile-drawer{display:none;position:fixed;inset:0;z-index:999;background:var(--color-bg-page);padding:24px;overflow-y:auto;flex-direction:column}
+    .jbp-mobile-toggle:checked ~ .jbp-mobile-drawer{display:flex}
+    .jbp-hamburger{display:none}
+    .jbp-opt3-dot{display:inline-block}
+    .jbp-opt3[open] .jbp-opt3-dot{display:none}
+    .jbp-opt3-chevron{display:none}
+    .jbp-opt3[open] .jbp-opt3-chevron{display:inline-block}
+    details summary::-webkit-details-marker{display:none}
+    @media (max-width:900px){
+      .jbp-nav-desktop{display:none !important}
+      .jbp-hamburger{display:flex !important}
+      .jbp-stack{grid-template-columns:1fr !important}
+      .jbp-grid-4{grid-template-columns:repeat(2,1fr) !important}
+    }
+    @media (max-width:600px){
+      .jbp-grid-4{grid-template-columns:1fr !important}
+    }
+  </style>
+</helmet>
+
+<input type="checkbox" id="jbp-mobile-toggle" class="jbp-mobile-toggle">
+<div class="jbp-mobile-drawer">
+  <div style="display:flex;justify-content:flex-end;margin-bottom:28px">
+    <label for="jbp-mobile-toggle" style="cursor:pointer;font-size:30px;line-height:1;color:var(--color-text-primary)">&times;</label>
+  </div>
+  <nav style="display:flex;flex-direction:column;gap:6px">
+    <a href="Home.dc.html#categories" style="padding:14px 4px;font-family:var(--font-condensed);font-size:16px;font-weight:700;letter-spacing:var(--tracking-wide);text-transform:uppercase;color:var(--color-text-primary);border-bottom:1px solid var(--color-border-default)">Store</a>
+    <a href="Home.dc.html#categories" style="padding:14px 4px;font-family:var(--font-condensed);font-size:16px;font-weight:700;letter-spacing:var(--tracking-wide);text-transform:uppercase;color:var(--color-text-primary);border-bottom:1px solid var(--color-border-default)">Best Sellers</a>
+    <a href="Home.dc.html#categories" style="padding:14px 4px;font-family:var(--font-condensed);font-size:16px;font-weight:700;letter-spacing:var(--tracking-wide);text-transform:uppercase;color:var(--color-text-primary);border-bottom:1px solid var(--color-border-default)">New Arrivals</a>
+    <a href="AboutNYCool.dc.html" style="padding:14px 4px;font-family:var(--font-condensed);font-size:16px;font-weight:700;letter-spacing:var(--tracking-wide);text-transform:uppercase;color:var(--color-text-primary);border-bottom:1px solid var(--color-border-default)">Our Story</a>
+    <a href="ChelseaMarket.dc.html" style="padding:14px 4px;font-family:var(--font-condensed);font-size:16px;font-weight:700;letter-spacing:var(--tracking-wide);text-transform:uppercase;color:var(--color-text-primary)">Chelsea Market</a>
+  </nav>
+  <div style="display:flex;gap:20px;padding:24px 4px;margin-top:12px;border-top:1px solid var(--color-border-default);color:var(--color-text-secondary)">
+    <a href="#" style-hover="color:var(--color-brand-primary)"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.25-1.5 1.55-1.5H16.7V3.6C16.4 3.55 15.4 3.5 14.3 3.5c-2.3 0-3.9 1.4-3.9 4V9.9H7.7V13H10.4v8z"></path></svg></a>
+    <a href="#" style-hover="color:var(--color-brand-primary)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"></circle></svg></a>
+    <a href="#" style-hover="color:var(--color-brand-primary)"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-1.7-.15-2.9-.47-4.15a3 3 0 0 0-2.1-2.1C17.85 5.1 12 5.1 12 5.1s-5.85 0-7.43.65a3 3 0 0 0-2.1 2.1C2.15 9.1 2 10.3 2 12s.15 2.9.47 4.15a3 3 0 0 0 2.1 2.1C6.15 18.9 12 18.9 12 18.9s5.85 0 7.43-.65a3 3 0 0 0 2.1-2.1c.32-1.25.47-2.45.47-4.15zM10 15V9l5.2 3z"></path></svg></a>
+    <a href="#" style-hover="color:var(--color-brand-primary)"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 2h-2.7v13.4a2.6 2.6 0 1 1-1.9-2.5v-2.8a5.4 5.4 0 1 0 4.6 5.3V9.4a6.9 6.9 0 0 0 4 1.3V7.9a4.1 4.1 0 0 1-4-3.6z"></path></svg></a>
+    <a href="#" style-hover="color:var(--color-brand-primary)"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.9 2 3 5.6 3 10.4c0 2.8 1.5 4.7 3.7 5.6.1 0 .3 0 .3-.2l.4-1.5c0-.2 0-.3-.1-.4-.5-.7-.9-1.6-.9-2.8 0-3.6 2.7-6.7 6.9-6.7 3.7 0 5.8 2.2 5.8 5.3 0 4-1.8 7.3-4.4 7.3-1.4 0-2.5-1.2-2.2-2.6.4-1.8 1.3-3.6 1.3-4.8 0-1.1-.6-2.1-1.9-2.1-1.5 0-2.6 1.5-2.6 3.5 0 1.3.4 2.1.4 2.1l-1.7 7.3c-.5 2.1-.1 4.7 0 5 0 .1.2.1.2.1 1.2-1.7 1.2-2 1.8-3.9l.7-2.7c.4.7 1.4 1.2 2.5 1.2 3.3 0 5.7-3 5.7-7.1C21 6.1 17.3 2 12 2z"></path></svg></a>
+  </div>
+</div>
+
+<div style="{{ headerStyle }}">
+  <div style="max-width:var(--container-max);margin:0 auto;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:18px 40px;gap:16px">
+    <img src="assets/logo-wordmark.png" ref="{{ logoRef }}" alt="JB Prince" style="{{ logoStyle }}">
+    <nav style="{{ navPillStyle }}" class="jbp-nav-desktop">
+      <div style="position:relative" onMouseEnter="{{ openMega }}" onMouseLeave="{{ closeMega }}">
+        <a href="Home.dc.html#categories" style="{{ navItemStyle }}">Store <i class="icon-chevron-down" style="font-size:9px;margin-left:5px;position:relative;top:-1px"></i></a>
+        <sc-if value="{{ megaOpen }}" hint-placeholder-val="{{ false }}">
+          <div style="{{ megaPanelStyle }}">
+            <a href="Home.dc.html#categories" style="{{ megaLinkStyle }}">Professional Cutlery</a>
+            <a href="Home.dc.html#categories" style="{{ megaLinkStyle }}">Cookware</a>
+            <a href="Home.dc.html#categories" style="{{ megaLinkStyle }}">Machines</a>
+            <a href="Home.dc.html#categories" style="{{ megaLinkStyle }}">Bar Tools</a>
+            <a href="Home.dc.html#categories" style="{{ megaLinkStyle }}">Kitchen Utensils</a>
+            <a href="Home.dc.html#categories" style="{{ megaLinkStyle }}">Table Service</a>
+            <a href="Home.dc.html#categories" style="{{ megaLinkStyle }}">Pastry Supplies &amp; Tools</a>
+            <a href="Home.dc.html#categories" style="{{ megaLinkStyle }}">Molds</a>
+            <a href="Home.dc.html#categories" style="{{ megaLinkStyle }}">Apparel</a>
+          </div>
+        </sc-if>
+      </div>
+      <a href="Home.dc.html#categories" style="{{ navItemStyle }}">Best Sellers</a>
+      <a href="Home.dc.html#categories" style="{{ navItemStyle }}">New Arrivals</a>
+      <a href="AboutNYCool.dc.html" style="{{ navItemStyleActive }}">Our Story</a>
+      <a href="ChelseaMarket.dc.html" style="{{ navItemStyle }}">Chelsea Market</a>
+      <div style="width:1px;height:16px;background:currentColor;opacity:.3;margin:0 4px;color:{{ storeIconColor }}"></div>
+      <i class="icon-search" style="cursor:pointer;color:{{ storeIconColor }}" style-hover="color:var(--color-brand-primary)"></i>
+      <i class="icon-circle-user" style="cursor:pointer;color:{{ storeIconColor }}" style-hover="color:var(--color-brand-primary)"></i>
+      <i class="icon-shopping-bag" style="cursor:pointer;color:{{ storeIconColor }}" style-hover="color:var(--color-brand-primary)"></i>
+    </nav>
+    <div style="{{ navIconRowStyle }};justify-self:end" class="jbp-nav-desktop">
+      <div style="display:flex;align-items:center;gap:8px">
+        <a href="#" style="{{ socialIconStyle }}" style-hover="color:var(--color-brand-primary)"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.25-1.5 1.55-1.5H16.7V3.6C16.4 3.55 15.4 3.5 14.3 3.5c-2.3 0-3.9 1.4-3.9 4V9.9H7.7V13H10.4v8z"></path></svg></a>
+        <a href="#" style="{{ socialIconStyle }}" style-hover="color:var(--color-brand-primary)"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"></circle></svg></a>
+        <a href="#" style="{{ socialIconStyle }}" style-hover="color:var(--color-brand-primary)"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-1.7-.15-2.9-.47-4.15a3 3 0 0 0-2.1-2.1C17.85 5.1 12 5.1 12 5.1s-5.85 0-7.43.65a3 3 0 0 0-2.1 2.1C2.15 9.1 2 10.3 2 12s.15 2.9.47 4.15a3 3 0 0 0 2.1 2.1C6.15 18.9 12 18.9 12 18.9s5.85 0 7.43-.65a3 3 0 0 0 2.1-2.1c.32-1.25.47-2.45.47-4.15zM10 15V9l5.2 3z"></path></svg></a>
+        <a href="#" style="{{ socialIconStyle }}" style-hover="color:var(--color-brand-primary)"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 2h-2.7v13.4a2.6 2.6 0 1 1-1.9-2.5v-2.8a5.4 5.4 0 1 0 4.6 5.3V9.4a6.9 6.9 0 0 0 4 1.3V7.9a4.1 4.1 0 0 1-4-3.6z"></path></svg></a>
+        <a href="#" style="{{ socialIconStyle }}" style-hover="color:var(--color-brand-primary)"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.9 2 3 5.6 3 10.4c0 2.8 1.5 4.7 3.7 5.6.1 0 .3 0 .3-.2l.4-1.5c0-.2 0-.3-.1-.4-.5-.7-.9-1.6-.9-2.8 0-3.6 2.7-6.7 6.9-6.7 3.7 0 5.8 2.2 5.8 5.3 0 4-1.8 7.3-4.4 7.3-1.4 0-2.5-1.2-2.2-2.6.4-1.8 1.3-3.6 1.3-4.8 0-1.1-.6-2.1-1.9-2.1-1.5 0-2.6 1.5-2.6 3.5 0 1.3.4 2.1.4 2.1l-1.7 7.3c-.5 2.1-.1 4.7 0 5 0 .1.2.1.2.1 1.2-1.7 1.2-2 1.8-3.9l.7-2.7c.4.7 1.4 1.2 2.5 1.2 3.3 0 5.7-3 5.7-7.1C21 6.1 17.3 2 12 2z"></path></svg></a>
+      </div>
+    </div>
+    <label for="jbp-mobile-toggle" class="jbp-hamburger" style="align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;background:rgba(0,0,0,.4);color:#fff;cursor:pointer">
+      <i class="icon-menu" style="font-size:18px"></i>
+    </label>
+  </div>
+</div>
+
+<section style="position:relative;min-height:460px;border-radius:0 0 28px 28px;overflow:hidden">
+  <image-slot id="hero-founders-still" shape="rect" placeholder="Judy and Larry Prince, portrait" src="assets/about-hero-founders-still.png" style="position:absolute;inset:0;width:100%;height:100%;min-height:460px"></image-slot>
+  <div style="position:absolute;inset:0;min-height:460px;background:linear-gradient(180deg,rgba(20,20,20,.2) 0%,rgba(20,20,20,.6) 100%)"></div>
+  <div style="position:relative;max-width:var(--container-max);margin:0 auto;padding:200px 40px 48px">
+    <div style="display:inline-block;font-family:var(--font-condensed);font-size:11px;font-weight:700;letter-spacing:0.03em;text-transform:uppercase;color:#fff;background:var(--color-brand-primary);padding:4px 11px;transform:rotate(-1deg);margin-bottom:16px">Our Story</div>
+    <h1 style="font-family:var(--font-condensed);text-transform:uppercase;margin:0;font-weight:700;letter-spacing:var(--tracking-tight);color:#fff;font-size:clamp(30px,4.4vw,76px);line-height:1.08;max-width:18ch;text-wrap:pretty">Fifty Years of Curation</h1>
+  </div>
+</section>
+
+<section style="max-width:900px;margin:0 auto;padding:110px 40px 40px">
+  <p style="margin:0 0 28px;font-size:var(--text-lg);line-height:var(--leading-snug);font-weight:700;color:var(--color-brand-primary)">On March 1, 1977, Judy Prince founded JB Prince from a brownstone in Park Slope, Brooklyn, on the theory that New York's chefs deserved direct access to the tools their trade actually demanded — not what a general houseware catalog happened to stock.</p>
+  <p style="margin:0 0 28px;font-size:var(--text-md);line-height:var(--leading-snug);color:var(--color-text-secondary)">Two years later, Larry Prince left corporate America to join full-time — a six-month commitment that became a lifelong partnership. Judy brought product expertise and chef relationships; Larry brought the business discipline to grow it. Together they built the direct-to-source model that still defines how we buy today.</p>
+  <p style="margin:0;font-size:var(--text-md);line-height:var(--leading-snug);color:var(--color-text-secondary)">Fifty years on, under Tim Mussig's leadership since his start on the customer service desk in 2000, JB Prince carries the same standard forward — independently owned, chef-rooted, and still refusing to stock anything we wouldn't hand a chef ourselves — a standard now open to anyone who cares about cooking well, not just the professional kitchen.</p>
+</section>
+
+<section style="max-width:var(--container-max);margin:0 auto;padding:100px 40px 0">
+  <div style="background:#fff;border-radius:20px;border:1px solid var(--color-border-default);padding:80px 40px;text-align:center;color:var(--color-text-secondary);font-family:var(--font-condensed);font-size:14px;font-weight:700;letter-spacing:var(--tracking-wide);text-transform:uppercase">Timeline Placeholder</div>
+</section>
+
+
+
+<section style="max-width:var(--container-max);margin:0 auto;padding:100px 40px">
+  <div style="background:#fff;border-radius:20px;box-shadow:var(--shadow-lg);padding:64px">
+    <div style="margin-bottom:44px">
+      <h2 style="font-family:var(--font-condensed);text-transform:uppercase;margin:0;font-size:clamp(28px,3.4vw,42px);font-weight:700;letter-spacing:var(--tracking-tight);line-height:1.08">Who Is JB Prince?</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:28px" class="jbp-stack">
+      <div>
+        <div style="position:relative;width:100%;aspect-ratio:16/10;border-radius:20px;overflow:hidden;background:var(--neutral-900)">
+          <img src="assets/part-1-brooklyn-born-thumb.png" alt="Who Is JB Prince? Part 1: Brooklyn Born" style="width:100%;height:100%;object-fit:cover;display:block">
+          <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none">
+            <div style="width:60px;height:60px;border-radius:50%;background:rgba(255,255,255,.92);display:flex;align-items:center;justify-content:center"><i class="icon-play" style="font-size:22px;color:var(--neutral-900);margin-left:3px"></i></div>
+          </div>
+        </div>
+        <div style="margin-top:14px;font-weight:700;font-size:var(--text-base)">PART 1: Brooklyn Born</div>
+        <p style="margin:6px 0 0;color:var(--color-text-secondary);font-size:var(--text-sm)">A walk down the floor with our buyers.</p>
+      </div>
+      <div>
+        <div style="position:relative;width:100%;aspect-ratio:16/10;border-radius:20px;overflow:hidden;background:var(--neutral-900)">
+          <img src="assets/part-2-nyc-icon-thumb.png" alt="Who Is JB Prince? Part 2: NYC Icon" style="width:100%;height:100%;object-fit:cover;display:block">
+          <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none">
+            <div style="width:60px;height:60px;border-radius:50%;background:rgba(255,255,255,.92);display:flex;align-items:center;justify-content:center"><i class="icon-play" style="font-size:22px;color:var(--neutral-900);margin-left:3px"></i></div>
+          </div>
+        </div>
+        <div style="margin-top:14px;font-weight:700;font-size:var(--text-base)">PART 2: NYC Icon</div>
+        <p style="margin:6px 0 0;color:var(--color-text-secondary);font-size:var(--text-sm)">The forges and foundries behind the tools.</p>
+      </div>
+      <div>
+        <div style="position:relative;width:100%;aspect-ratio:16/10;border-radius:20px;overflow:hidden;background:var(--neutral-900)">
+          <video src="assets/part-3-new-prince.mp4" controls="true" loop="true" playsinline="true" ref="{{ loop7sRef }}" style="width:100%;height:100%;object-fit:cover;display:block"></video>
+          <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none">
+            <div style="width:60px;height:60px;border-radius:50%;background:rgba(255,255,255,.92);display:flex;align-items:center;justify-content:center"><i class="icon-play" style="font-size:22px;color:var(--neutral-900);margin-left:3px"></i></div>
+          </div>
+        </div>
+        <div style="margin-top:14px;font-weight:700;font-size:var(--text-base)">PART 3: The New Prince</div>
+        <p style="margin:6px 0 0;color:var(--color-text-secondary);font-size:var(--text-sm)">A new era for the showroom — same chef-level insight, open to more of New York.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer style="background:#0a0a0a;color:rgba(255,255,255,.7);border-radius:28px 28px 0 0">
+  <div style="max-width:var(--container-max);margin:0 auto;padding:32px 40px;display:flex;align-items:center;justify-content:space-between;gap:24px;border-bottom:1px solid rgba(255,255,255,.12);flex-wrap:wrap">
+    <div style="font-family:var(--font-condensed);font-size:12px;font-weight:700;letter-spacing:var(--tracking-wider);text-transform:uppercase;color:#fff">Sign up for early access, new arrivals, and stories from the trade</div>
+    <div style="display:flex;gap:8px;flex:1;max-width:420px;min-width:240px">
+      <input type="email" placeholder="Email address" style="flex:1;min-width:0;padding:11px 14px;border:1px solid rgba(255,255,255,.25);background:transparent;color:#fff;font-family:var(--font-sans);font-size:var(--text-sm)">
+      <button style="padding:0 22px;background:#fff;color:#0a0a0a;border:none;font-family:var(--font-condensed);font-size:12px;font-weight:700;letter-spacing:var(--tracking-wide);text-transform:uppercase;cursor:pointer" style-hover="background:var(--color-brand-primary);color:#fff">Submit</button>
+    </div>
+  </div>
+
+  <div style="max-width:var(--container-max);margin:0 auto;padding:56px 40px;display:grid;grid-template-columns:repeat(4,1fr);gap:32px" class="jbp-stack jbp-footer-grid">
+    <div>
+      <div style="font-family:var(--font-condensed);font-size:11px;font-weight:700;letter-spacing:var(--tracking-wider);text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:18px">Customer Care</div>
+      <div style="display:flex;flex-direction:column;gap:11px;font-size:12px;font-family:var(--font-condensed);letter-spacing:var(--tracking-wide);text-transform:uppercase">
+        <a href="#" style="color:rgba(255,255,255,.7)" style-hover="color:#fff">Contact Us</a>
+        <a href="#" style="color:rgba(255,255,255,.7)" style-hover="color:#fff">Gift Cards</a>
+        <a href="#" style="color:rgba(255,255,255,.7)" style-hover="color:#fff">Replacement Parts</a>
+        <a href="#" style="color:rgba(255,255,255,.7)" style-hover="color:#fff">Specials &amp; Closeouts</a>
+        <a href="#" style="color:rgba(255,255,255,.7)" style-hover="color:#fff">Pricing Policy</a>
+      </div>
+    </div>
+    <div>
+      <div style="font-family:var(--font-condensed);font-size:11px;font-weight:700;letter-spacing:var(--tracking-wider);text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:18px">Company</div>
+      <div style="display:flex;flex-direction:column;gap:11px;font-size:12px;font-family:var(--font-condensed);letter-spacing:var(--tracking-wide);text-transform:uppercase">
+        <a href="HomeNYCool.dc.html" style="color:rgba(255,255,255,.7)" style-hover="color:#fff">Home</a>
+        <a href="AboutNYCool.dc.html" style="color:rgba(255,255,255,.7)" style-hover="color:#fff">Our Story</a>
+        <a href="ChelseaMarket.dc.html" style="color:rgba(255,255,255,.7)" style-hover="color:#fff">Chelsea Market</a>
+        <a href="#" style="color:rgba(255,255,255,.7)" style-hover="color:#fff">Beyond The Plate</a>
+        <a href="#" style="color:rgba(255,255,255,.7)" style-hover="color:#fff">FAQ</a>
+      </div>
+    </div>
+    <div>
+      <div style="font-family:var(--font-condensed);font-size:11px;font-weight:700;letter-spacing:var(--tracking-wider);text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:18px">Legal</div>
+      <div style="display:flex;flex-direction:column;gap:11px;font-size:12px;font-family:var(--font-condensed);letter-spacing:var(--tracking-wide);text-transform:uppercase">
+        <a href="#" style="color:rgba(255,255,255,.7)" style-hover="color:#fff">Shipping Policy</a>
+        <a href="#" style="color:rgba(255,255,255,.7)" style-hover="color:#fff">Refund Policy</a>
+        <a href="#" style="color:rgba(255,255,255,.7)" style-hover="color:#fff">Privacy Policy</a>
+        <a href="#" style="color:rgba(255,255,255,.7)" style-hover="color:#fff">Terms of Service</a>
+        <a href="#" style="color:rgba(255,255,255,.7)" style-hover="color:#fff">Accessibility</a>
+      </div>
+    </div>
+    <div>
+      <div style="font-family:var(--font-condensed);font-size:11px;font-weight:700;letter-spacing:var(--tracking-wider);text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:18px">Follow</div>
+      <div style="display:flex;gap:16px;margin-bottom:22px">
+        <a href="#" style="display:flex" style-hover="color:var(--color-brand-primary)"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" style="color:rgba(255,255,255,.7)"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.25-1.5 1.55-1.5H16.7V3.6C16.4 3.55 15.4 3.5 14.3 3.5c-2.3 0-3.9 1.4-3.9 4V9.9H7.7V13H10.4v8z"></path></svg></a>
+        <a href="#" style="display:flex" style-hover="color:var(--color-brand-primary)"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:rgba(255,255,255,.7)"><rect x="2" y="2" width="20" height="20" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"></circle></svg></a>
+        <a href="#" style="display:flex" style-hover="color:var(--color-brand-primary)"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" style="color:rgba(255,255,255,.7)"><path d="M22 12c0-1.7-.15-2.9-.47-4.15a3 3 0 0 0-2.1-2.1C17.85 5.1 12 5.1 12 5.1s-5.85 0-7.43.65a3 3 0 0 0-2.1 2.1C2.15 9.1 2 10.3 2 12s.15 2.9.47 4.15a3 3 0 0 0 2.1 2.1C6.15 18.9 12 18.9 12 18.9s5.85 0 7.43-.65a3 3 0 0 0 2.1-2.1c.32-1.25.47-2.45.47-4.15zM10 15V9l5.2 3z"></path></svg></a>
+        <a href="#" style="display:flex" style-hover="color:var(--color-brand-primary)"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" style="color:rgba(255,255,255,.7)"><path d="M16.5 2h-2.7v13.4a2.6 2.6 0 1 1-1.9-2.5v-2.8a5.4 5.4 0 1 0 4.6 5.3V9.4a6.9 6.9 0 0 0 4 1.3V7.9a4.1 4.1 0 0 1-4-3.6z"></path></svg></a>
+        <a href="#" style="display:flex" style-hover="color:var(--color-brand-primary)"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" style="color:rgba(255,255,255,.7)"><path d="M12 2C6.9 2 3 5.6 3 10.4c0 2.8 1.5 4.7 3.7 5.6.1 0 .3 0 .3-.2l.4-1.5c0-.2 0-.3-.1-.4-.5-.7-.9-1.6-.9-2.8 0-3.6 2.7-6.7 6.9-6.7 3.7 0 5.8 2.2 5.8 5.3 0 4-1.8 7.3-4.4 7.3-1.4 0-2.5-1.2-2.2-2.6.4-1.8 1.3-3.6 1.3-4.8 0-1.1-.6-2.1-1.9-2.1-1.5 0-2.6 1.5-2.6 3.5 0 1.3.4 2.1.4 2.1l-1.7 7.3c-.5 2.1-.1 4.7 0 5 0 .1.2.1.2.1 1.2-1.7 1.2-2 1.8-3.9l.7-2.7c.4.7 1.4 1.2 2.5 1.2 3.3 0 5.7-3 5.7-7.1C21 6.1 17.3 2 12 2z"></path></svg></a>
+      </div>
+      <div style="font-size:12px;color:rgba(255,255,255,.5);line-height:var(--leading-relaxed)">36 E 31st St<br>New York, NY 10016</div>
+    </div>
+  </div>
+
+  <div style="border-top:1px solid rgba(255,255,255,.12)">
+    <div style="max-width:var(--container-max);margin:0 auto;padding:20px 40px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap">
+      <img src="assets/logo-wordmark-white.png" alt="JB Prince" style="height:16px;width:auto;display:block;opacity:.8">
+      <div style="font-family:var(--font-condensed);font-size:11px;letter-spacing:var(--tracking-wide);text-transform:uppercase;color:rgba(255,255,255,.4)">© 2027 JB Prince Co. — United States (USD $)</div>
+    </div>
+  </div>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { scrolled: false, activeEra: 0, megaOpen: false, timelineProgress: 0 };
+  eraRowEls = [];
+  eras = [
+    { year: '1977', label: 'Judy Prince founds the company in a Park Slope brownstone.', detail: 'On March 1, 1977, Judy Prince founded JB Prince Company from a brownstone in Park Slope, Brooklyn. The mission: to source and distribute the finest culinary tools for professional chefs. First-year sales come in around $18,000.' },
+    { year: '1978', label: 'Second-year sales top $80,000 — the model is validated.', detail: 'Sales climb to roughly $80,000 in the company\u2019s second year. The growth makes clear this is more than a side project.' },
+    { year: '1979', label: 'Larry Prince joins full-time, forming a lifelong partnership.', detail: 'In mid-March 1979, Larry Prince leaves his position in corporate America to join JB Prince full-time. What was meant to be a six-month commitment becomes a lifelong partnership. Judy brings product expertise, chef relationships, and an obsessive commitment to quality; Larry brings business acumen, marketing strategy, and operational discipline.' },
+    { year: '1981', label: 'The company moves into a Manhattan showroom on West 36th Street.', detail: 'JB Prince moves from Brooklyn to West 36th Street in Manhattan\u2019s garment district — a shift from home-based operation to professional showroom, making it easier for customers to visit and browse in person.' },
+    { year: '1986', label: 'A larger showroom opens on West 38th Street.', detail: 'JB Prince moves to a larger space at West 38th Street to accommodate continued growth and inventory expansion.' },
+    { year: '1996', label: 'JB Prince settles on East 31st Street, where it remains today.', detail: 'JB Prince relocates to East 31st Street, where it remains today. The showroom becomes a destination for chefs, culinary students, and industry professionals — a place where product curation, expert knowledge, and direct relationships form the foundation of every transaction.' },
+    { year: '1997–2019', label: 'The printed catalog anchors JB Prince\u2019s direct-to-customer strategy.', detail: 'The printed catalog remains a cornerstone of JB Prince\u2019s direct-to-customer strategy until the final catalog is produced in 2019. Over those decades, the catalog evolves with the industry, but the principle stays constant: thoughtfully curated products selected for quality and relevance, with knowledgeable support available by phone.' },
+    { year: '2000', label: 'Tim Mussig joins — and begins two decades of leadership.', detail: 'Tim Mussig joins JB Prince as a customer service representative. A former restaurant cook looking for a change of pace, he brings kitchen experience and an understanding of professional chefs\u2019 needs, and is promoted to customer service manager within six months. Over the next two decades he moves into leadership roles across the company, ultimately becoming President, CEO, and Owner — steering JB Prince through changing dining trends, digital transformation, and the aftermath of COVID-19 while keeping the company independent and committed to its founding mission.' },
+    { year: 'Fall 2026', label: 'A flagship showroom opens at Chelsea Market.', detail: 'JB Prince opens a flagship showroom at Chelsea Market in Manhattan. For the first time, the company opens directly to the public at street level — a demonstration kitchen, chef and vendor collaborations, and programming that makes the tools of the trade accessible to home cooks, not just professionals.' },
+    { year: '2027', label: 'JB Prince marks its 50th anniversary.', detail: 'JB Prince marks its 50th anniversary, entering its next chapter with the same commitment to excellence, quality, and customer service that has defined the company since 1977.' },
+  ];
+  loop7sRef = (el) => {
+    if (!el) return;
+    el.muted = true;
+    el.controls = true;
+    el.loop = true;
+    el.addEventListener('timeupdate', () => { if (el.currentTime >= 7) el.currentTime = 0; });
+    el.addEventListener('loadedmetadata', () => el.play());
+    el.play();
+  };
+  historyVideoRef = (el) => { if (el) { el.playbackRate = 0.5; el.loop = true; el.muted = true; el.play(); } };
+  heroVideoRef = (el) => { if (el) { el.loop = true; el.muted = true; el.play(); } };
+  logoRef = (el) => { this.logoEl = el; if (el) el.src = this.state.scrolled ? 'assets/logo-wordmark.png' : 'assets/logo-wordmark-white.png'; };
+  componentDidMount() {
+    this.onScroll = () => {
+      const scrolled = window.scrollY > 60;
+      if (scrolled !== this.state.scrolled) {
+        this.setState({ scrolled });
+        if (this.logoEl) this.logoEl.src = scrolled ? 'assets/logo-wordmark.png' : 'assets/logo-wordmark-white.png';
+      }
+      this.updateTimelineScroll();
+    };
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    this.onScroll();
+    this.timelineObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const i = this.eraRowEls.indexOf(entry.target);
+          if (i !== -1 && i !== this.state.activeEra) this.setState({ activeEra: i });
+        }
+      });
+    }, { rootMargin: '-45% 0px -45% 0px', threshold: 0 });
+    this.eraRowEls.forEach((el) => { if (el) this.timelineObserver.observe(el); });
+  }
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.onScroll);
+    if (this.timelineObserver) this.timelineObserver.disconnect();
+  }
+  updateTimelineScroll() {
+    const wrap = this.timelineWrapEl;
+    if (!wrap) return;
+    const rect = wrap.getBoundingClientRect();
+    const viewportCenter = window.innerHeight * 0.5;
+    const total = rect.height || 1;
+    const passed = viewportCenter - rect.top;
+    const pct = Math.max(0, Math.min(100, (passed / total) * 100));
+    if (Math.abs(pct - this.state.timelineProgress) > 0.5) this.setState({ timelineProgress: pct });
+  }
+  timelineWrapRef = (el) => {
+    this.timelineWrapEl = el;
+    if (el) this.updateTimelineScroll();
+  };
+  renderVals() {
+    const scrolled = this.state.scrolled;
+    const activeEra = this.state.activeEra;
+    const historyVideoRef = this.historyVideoRef;
+    const timelineEras = this.eras.map((era, i) => {
+      const isActive = i === activeEra;
+      const isPast = i < activeEra;
+      return {
+        year: era.year,
+        label: era.label,
+        detail: era.detail,
+        onSelect: () => {
+          const el = this.eraRowEls[i];
+          if (el) window.scrollTo({ top: window.scrollY + el.getBoundingClientRect().top - window.innerHeight * 0.4, behavior: 'smooth' });
+        },
+        rowRef: (el) => { this.eraRowEls[i] = el; if (el && this.timelineObserver) this.timelineObserver.observe(el); },
+        tabStyle: {
+          display: 'flex', flexDirection: 'column', alignItems: i === 0 ? 'flex-start' : i === this.eras.length - 1 ? 'flex-end' : 'center',
+          cursor: 'pointer', flex: '0 0 auto',
+          opacity: isActive || isPast ? 1 : 0.45,
+          transition: 'opacity 220ms var(--ease-standard)',
+        },
+        dotStyle: {
+          width: '10px', height: '10px', borderRadius: '50%', marginBottom: '14px',
+          background: isActive || isPast ? 'var(--color-brand-primary)' : 'var(--neutral-300)',
+          border: '2px solid var(--color-bg-primary, #f7f7f7)',
+          transition: 'background 200ms var(--ease-standard)',
+        },
+        yearStyle: { fontFamily: 'var(--font-condensed)', fontSize: '13px', fontWeight: 700, color: 'var(--color-brand-primary)', letterSpacing: 'var(--tracking-wide)' },
+        rowStyle: {
+          padding: '48px 0', maxWidth: '60ch',
+          opacity: isActive ? 1 : 0.4,
+          transition: 'opacity 260ms var(--ease-standard)',
+        },
+        labelStyle: { fontSize: 'var(--text-lg)', fontWeight: 700, color: 'var(--color-text-primary)', lineHeight: 'var(--leading-tight)', marginBottom: '10px' },
+        detailStyle: { margin: 0, fontSize: 'var(--text-base)', color: 'var(--color-text-secondary)', lineHeight: 'var(--leading-relaxed)' },
+      };
+    });
+    const accordionEras = this.eras.map((era) => ({ year: era.year, label: era.label, detail: era.detail }));
+    const slideshowEras = this.eras.map((era, i) => ({ year: era.year, label: era.label, slotId: 'timeline-option-slide-' + i }));
+    return {
+      accordionEras,
+      slideshowEras,
+      historyVideoRef,
+      heroVideoRef: this.heroVideoRef,
+      loop7sRef: this.loop7sRef,
+      timelineEras,
+      timelineProgress: this.state.timelineProgress,
+      timelineWrapRef: this.timelineWrapRef,
+      erasRaw: this.eras,
+      erasWithStill: this.eras.map((e, i) => ({ ...e, still: `assets/timeline-still-${(i % 5) + 1}.png` })),
+      megaOpen: this.state.megaOpen,
+      openMega: () => this.setState({ megaOpen: true }),
+      closeMega: () => this.setState({ megaOpen: false }),
+      navPillStyle: {
+        display: 'flex', alignItems: 'center', gap: '4px',
+      },
+      navItemStyle: {
+        display: 'flex', alignItems: 'center', padding: '9px 10px',
+        fontFamily: 'var(--font-condensed)', fontSize: '12px', fontWeight: 700,
+        letterSpacing: 'var(--tracking-wider)', textTransform: 'uppercase',
+        color: scrolled ? 'var(--color-text-primary)' : '#ffffff',
+        transition: 'color 220ms var(--ease-standard)', cursor: 'pointer',
+      },
+      navItemStyleActive: {
+        display: 'flex', alignItems: 'center', padding: '9px 10px',
+        fontFamily: 'var(--font-condensed)', fontSize: '12px', fontWeight: 700,
+        letterSpacing: 'var(--tracking-wider)', textTransform: 'uppercase',
+        color: 'var(--color-brand-primary)', cursor: 'pointer',
+      },
+      megaPanelStyle: {
+        position: 'absolute', top: 'calc(100% + 12px)', left: '50%', transform: 'translateX(-50%)',
+        background: '#ffffff', borderRadius: '20px', boxShadow: 'var(--shadow-lg)',
+        padding: '20px', display: 'grid', gridTemplateColumns: 'repeat(2, max-content)', gap: '4px 28px',
+        minWidth: '360px', zIndex: 60,
+      },
+      megaLinkStyle: {
+        display: 'block', padding: '8px 10px', borderRadius: '10px',
+        fontFamily: 'var(--font-sans)', fontSize: 'var(--text-sm)', fontWeight: 500,
+        color: 'var(--color-text-primary)', whiteSpace: 'nowrap',
+      },
+      headerStyle: {
+        position: 'fixed', top: 0, left: 0, right: 0, zIndex: 50,
+        background: scrolled ? '#ffffff' : 'transparent',
+        borderBottom: scrolled ? '1px solid var(--color-border-default)' : '1px solid transparent',
+        boxShadow: scrolled ? 'var(--shadow-sm)' : 'none',
+        transition: 'background 220ms var(--ease-standard), border-color 220ms var(--ease-standard), box-shadow 220ms var(--ease-standard)',
+      },
+      navLinkStyle: { color: scrolled ? 'var(--color-text-primary)' : '#ffffff', transition: 'color 220ms var(--ease-standard)' },
+      logoRef: this.logoRef,
+      logoStyle: { height: '26px', width: 'auto', display: 'block' },
+      socialIconStyle: { display: 'flex', color: scrolled ? 'var(--color-brand-primary)' : '#ffffff', transition: 'color 220ms var(--ease-standard)' },
+      storeIconColor: scrolled ? 'var(--color-text-primary)' : '#ffffff',
+      navIconRowStyle: { display: 'flex', alignItems: 'center', gap: '16px', fontSize: '17px', color: scrolled ? 'var(--color-text-secondary)' : 'rgba(255,255,255,.9)', transition: 'color 220ms var(--ease-standard)' },
+    };
+  }
+}
+</script>
+</body>
+</html>
